@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanda - Persona-Targeted Solutions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+    <style>
+        /* Tailwind CDN */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        /* Grayscale Palette */
+        .gray-dark {
+            background: #374151;
+        }
+        
+        .gray-medium {
+            background: #6B7280;
+        }
+        
+        .diagonal-divider {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        
+        .diagonal-divider-reverse {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* Lavanda Logo Font */
+        .lavanda-logo {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 py-4 border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="lavanda-logo">
+                <a href="index.html" class="hover:opacity-80 transition">
+                    <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-gray-600 transition">Solutions</a>
+                <a href="#" class="hover:text-gray-600 transition">About</a>
+                <a href="#" class="hover:text-gray-600 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                Property Management Software<br>
+                <span class="text-gray-700">Built for Your Team</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                Discover how Lavanda's AI-powered PMS delivers tailored solutions for every stakeholder in your organization
+            </p>
+        </div>
+    </section>
+
+    <!-- Personas Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                Choose Your Role
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- IT Teams -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-600 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">IT Teams</h3>
+                        <p class="text-gray-600 mb-6">Modern architecture, minimal overhead, zero surprises. API-first PMS your tech team will love.</p>
+                        <a href="it-teams.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore IT Solutions →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Finance Teams -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-500 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">💰</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Finance Teams</h3>
+                        <p class="text-gray-600 mb-6">Eliminate reconciliation headaches with AI-powered accounting and automated billing.</p>
+                        <a href="finance.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore Finance Solutions →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Marketing Teams -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-600 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Marketing Teams</h3>
+                        <p class="text-gray-600 mb-6">Brand-perfect booking journeys that convert. Full-funnel insights built in.</p>
+                        <a href="marketing.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore Marketing Solutions →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Portfolio Operations -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-500 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">🏢</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Portfolio Operations</h3>
+                        <p class="text-gray-600 mb-6">Operate at scale without scaling cost. Automate, orchestrate, and optimize.</p>
+                        <a href="operations.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore Operations Solutions →
+                        </a>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sales & Commercial -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-600 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Sales & Commercial</h3>
+                        <p class="text-gray-600 mb-6">Smarter sales journeys. Higher conversions. Longer stays.</p>
+                        <a href="sales.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore Sales Solutions →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Asset Management -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-500 h-2"></div>
+                    <div class="p-8">
+                        <div class="text-4xl mb-4">📊</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Asset Management</h3>
+                        <p class="text-gray-600 mb-6">AI-driven portfolio performance optimization and rapid expansion capabilities.</p>
+                        <a href="asset-management.html" class="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                            Explore Asset Management Solutions →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="lavanda-logo mb-4 md:mb-0">
+                    <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                </div>
+                <div class="text-gray-400">
+                    <p>&copy; 2025 Lavanda. Property Management Software.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

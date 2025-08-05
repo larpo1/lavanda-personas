@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Teams - Lavanda PMS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+    <style>
+        /* Tailwind CDN */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        /* Grayscale Palette */
+        .gray-dark {
+            background: #374151;
+        }
+        
+        .gray-medium {
+            background: #6B7280;
+        }
+        
+        .diagonal-divider {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        
+        .diagonal-divider-reverse {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* Lavanda Logo Font */
+        .lavanda-logo {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        /* Mock UI Elements */
+        .mock-browser {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+        }
+        
+        .browser-bar {
+            background: #E5E7EB;
+            height: 30px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .dot-red { background: #EF4444; }
+        .dot-yellow { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 py-4 border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="lavanda-logo">
+                <a href="index.html" class="hover:opacity-80 transition">
+                    <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-600 transition">← Back to Overview</a>
+                <a href="#" class="hover:text-gray-600 transition">Book Demo</a>
+                <a href="#" class="hover:text-gray-600 transition">See Lavanda Journeys</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-gray-600 mb-4 uppercase tracking-wide">For Marketing Teams</div>
+                        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                            Brand-Perfect<br>
+                            Booking Journeys<br>
+                            <span class="text-gray-700">That Convert</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Launch high-converting, branded booking flows without compromising on user experience or control. Lavanda gives marketing teams the flexibility to start fast and scale up, with full-funnel insights built in.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                                Book a Demo
+                            </button>
+                            <button class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-gray-500 hover:text-gray-800 transition-all">
+                                Explore Marketing Capabilities
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Mockup -->
+                    <div class="relative">
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-xl">
+                            <div class="bg-gray-600 text-white p-4 rounded-t-lg">
+                                <h4 class="font-semibold">Booking Journey Builder</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-gray-300 rounded flex items-center justify-center text-sm">📱</div>
+                                            <div class="ml-3">
+                                                <div class="text-sm font-semibold">Mobile Embedded</div>
+                                                <div class="text-xs text-gray-500">Iframe + unit selection</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs text-gray-600">Ready</div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 bg-blue-50 rounded">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-gray-500 rounded flex items-center justify-center text-sm text-white">💻</div>
+                                            <div class="ml-3">
+                                                <div class="text-sm font-semibold">Desktop Bespoke</div>
+                                                <div class="text-xs text-gray-500">Full API integration</div>
+                                            </div>
+                                        </div>
+                                        <div class="text-xs text-gray-600">Active</div>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-gray-100 rounded">
+                                        <div class="text-xs text-gray-500 mb-1">JOURNEY ANALYTICS</div>
+                                        <div class="grid grid-cols-3 gap-4 text-center">
+                                            <div>
+                                                <div class="text-lg font-bold text-gray-700">32%</div>
+                                                <div class="text-xs text-gray-500">Conversion</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-lg font-bold text-gray-700">4.2m</div>
+                                                <div class="text-xs text-gray-500">Avg Session</div>
+                                            </div>
+                                            <div>
+                                                <div class="text-lg font-bold text-gray-700">89%</div>
+                                                <div class="text-xs text-gray-500">Completion</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-center">
+                                    <span class="text-xs text-gray-600 font-semibold">Out of the box or fully bespoke – your booking journey, your way</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="py-16 bg-gray-700 diagonal-divider">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-12">Challenges for Marketing Teams</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🎨 Fragmented Booking Journeys</h3>
+                        <p class="text-sm">Difficult to maintain brand control and UX consistency across platforms.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">📉 Conversion Uncertainty</h3>
+                        <p class="text-sm">No visibility into where leads drop off in the funnel.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔄 Limited Rebooking Strategy</h3>
+                        <p class="text-sm">No tools to engage likely rebookers or identify opportunities.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">⚖️ Brand Integrity vs Tech Complexity</h3>
+                        <p class="text-sm">Building bespoke experiences often requires high internal dev resource.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔗 Disconnected Tools</h3>
+                        <p class="text-sm">Marketing sites, CRM, and booking journeys often fail to speak to each other.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">How Lavanda Solves Them</h2>
+                
+                <!-- Branded Booking Journeys -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Branded Booking Journeys for Every Stage</h3>
+                            <p class="text-gray-600 mb-6">
+                                Lavanda offers a tiered booking journey solution tailored to your resources and ambitions.
+                            </p>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-start">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Out-of-the-box</div>
+                                        <div class="text-sm text-gray-600">Fast adoption with minimal lift – white-labeled booking journey</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3 mt-2"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Customizable Branded Checkout</div>
+                                        <div class="text-sm text-gray-600">Embed with branded colors, fonts, and messaging</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-2 h-2 bg-gray-400 rounded-full mr-3 mt-2"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Full Bespoke (API-driven)</div>
+                                        <div class="text-sm text-gray-600">Build from scratch with GraphQL APIs – ideal for enterprise teams</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Booking Journey Spectrum Mockup -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="text-center mb-6">
+                                <h4 class="font-semibold text-gray-900 mb-4">Booking Journey Evolution</h4>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <!-- Level 1: Out of the box -->
+                                <div class="flex items-center">
+                                    <div class="w-16 h-12 bg-gray-300 rounded flex items-center justify-center text-xs font-semibold mr-4">
+                                        Basic
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="h-2 bg-gray-300 rounded-full"></div>
+                                        <div class="text-xs text-gray-500 mt-1">Prebuilt Branded Checkout</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Level 2: Custom -->
+                                <div class="flex items-center">
+                                    <div class="w-16 h-12 bg-gray-500 rounded flex items-center justify-center text-xs font-semibold text-white mr-4">
+                                        Custom
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="h-2 bg-gray-500 rounded-full"></div>
+                                        <div class="text-xs text-gray-500 mt-1">Embedded with Brand Controls</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Level 3: Bespoke -->
+                                <div class="flex items-center">
+                                    <div class="w-16 h-12 bg-gray-700 rounded flex items-center justify-center text-xs font-semibold text-white mr-4">
+                                        Bespoke
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="h-2 bg-gray-700 rounded-full"></div>
+                                        <div class="text-xs text-gray-500 mt-1">API-Driven Custom Journey</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 text-center">
+                                <div class="text-xs text-gray-500 mb-2">Customer Examples:</div>
+                                <div class="flex justify-center space-x-6 text-xs text-gray-600">
+                                    <span>Unite (API)</span>
+                                    <span>Greystar (Custom)</span>
+                                    <span>Scape (Checkout)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <span class="text-xs text-gray-600 font-semibold">Upgrade your booking UX as your team grows</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Funnel Conversion Analytics -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Funnel Analytics Mockup -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                    <h4 class="font-semibold text-gray-900">Lead Funnel Analytics</h4>
+                                </div>
+                                <div class="p-6">
+                                    <!-- Sankey-style Funnel -->
+                                    <div class="space-y-4">
+                                        <div class="flex items-center">
+                                            <div class="w-24 bg-gray-600 h-8 rounded-l flex items-center justify-center text-white text-sm font-semibold">
+                                                Leads
+                                            </div>
+                                            <div class="flex-1 h-8 bg-gray-300 flex items-center justify-end pr-4">
+                                                <span class="text-sm font-semibold">1,247</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-8 flex items-center">
+                                            <div class="w-20 bg-gray-500 h-6 rounded-l flex items-center justify-center text-white text-xs font-semibold">
+                                                Viewings
+                                            </div>
+                                            <div class="flex-1 h-6 bg-gray-300 flex items-center justify-end pr-4">
+                                                <span class="text-xs font-semibold">623</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-16 flex items-center">
+                                            <div class="w-16 bg-gray-400 h-4 rounded-l flex items-center justify-center text-white text-xs font-semibold">
+                                                Apps
+                                            </div>
+                                            <div class="flex-1 h-4 bg-gray-300 flex items-center justify-end pr-4">
+                                                <span class="text-xs font-semibold">298</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-24 flex items-center">
+                                            <div class="w-12 bg-gray-600 h-4 rounded flex items-center justify-center text-white text-xs font-semibold">
+                                                Books
+                                            </div>
+                                            <div class="flex-1 h-4 bg-gray-300 flex items-center justify-end pr-4">
+                                                <span class="text-xs font-semibold">187</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-6 p-4 bg-yellow-50 rounded">
+                                        <div class="flex items-center mb-2">
+                                            <div class="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
+                                            <span class="text-sm font-semibold text-yellow-800">Drop-off Alert</span>
+                                        </div>
+                                        <div class="text-xs text-gray-600">Conversion dips at 'Application' stage</div>
+                                        <div class="text-xs text-gray-500 mt-1">Avg. time to convert: 4.2 days</div>
+                                    </div>
+                                    
+                                    <div class="mt-4 p-3 bg-gray-100 rounded">
+                                        <div class="text-xs text-gray-500 mb-1">AI COPILOT SUGGESTION</div>
+                                        <div class="text-sm text-gray-700">"Conversion dips at 'Application' stage – add follow-up prompt"</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Funnel Conversion Analytics</h3>
+                            <p class="text-gray-600 mb-6">
+                                Understand where you're losing leads and optimize every step of your conversion funnel with detailed analytics and AI-powered insights.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Visual funnel analysis with drop-off identification
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Average conversion time tracking
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    AI-powered optimization suggestions
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rebooking Intelligence -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Rebooking Intelligence & Incentives</h3>
+                            <p class="text-gray-600 mb-6">
+                                Target rebookers with precision. Lavanda uses sentiment, behaviour, and feedback signals to identify who is likely to rebook and automate personalised offers.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    AI-powered rebooking likelihood scoring
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Automated personalised offer campaigns
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Sentiment and feedback analysis
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Rebooking Campaign Mockup -->
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                            <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                <h4 class="font-semibold text-gray-900">Rebooking Campaign Dashboard</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="text-center mb-6">
+                                    <div class="text-2xl font-bold text-gray-700 mb-1">17</div>
+                                    <div class="text-sm text-gray-600">rebooking opportunities identified</div>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <div class="text-sm font-semibold text-gray-900">Sarah Johnson</div>
+                                            <div class="text-xs text-green-600 font-semibold">92% likely</div>
+                                        </div>
+                                        <div class="text-xs text-gray-600 mb-2">Last stay: Jan 2024 • Rating: 4.8/5</div>
+                                        <div class="text-xs text-gray-500">Sentiment: "Loved the location and staff"</div>
+                                        <div class="mt-3">
+                                            <span class="text-xs bg-gray-200 px-2 py-1 rounded">Offer: 15% early bird discount</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <div class="text-sm font-semibold text-gray-900">Michael Chen</div>
+                                            <div class="text-xs text-yellow-600 font-semibold">78% likely</div>
+                                        </div>
+                                        <div class="text-xs text-gray-600 mb-2">Last stay: Nov 2023 • Rating: 4.2/5</div>
+                                        <div class="text-xs text-gray-500">Last engagement: 12 days ago</div>
+                                        <div class="mt-3">
+                                            <span class="text-xs bg-gray-200 px-2 py-1 rounded">Offer: Room upgrade incentive</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                        <div class="flex justify-between items-start mb-2">
+                                            <div class="text-sm font-semibold text-gray-900">Emma Wilson</div>
+                                            <div class="text-xs text-gray-600 font-semibold">65% likely</div>
+                                        </div>
+                                        <div class="text-xs text-gray-600 mb-2">Last stay: Sep 2023 • Rating: 3.9/5</div>
+                                        <div class="text-xs text-gray-500">Feedback: "Good value for money"</div>
+                                        <div class="mt-3">
+                                            <span class="text-xs bg-gray-200 px-2 py-1 rounded">Offer: Loyalty points bonus</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 text-center">
+                                    <button class="bg-gray-700 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-gray-600 transition">
+                                        Send Rebooking Campaign
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Journey Tracking -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Journey Timeline Mockup -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                    <h4 class="font-semibold text-gray-900">Customer Journey Timeline</h4>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold">1</div>
+                                            <div class="ml-4 flex-1">
+                                                <div class="text-sm font-semibold">Ad Click</div>
+                                                <div class="text-xs text-gray-500">Google Ads - "Student Housing Manchester"</div>
+                                                <div class="text-xs text-gray-400">2 hours ago</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-4 border-l-2 border-gray-200 h-4"></div>
+                                        
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold">2</div>
+                                            <div class="ml-4 flex-1">
+                                                <div class="text-sm font-semibold">Landing Page</div>
+                                                <div class="text-xs text-gray-500">Property overview - stayed 3:24</div>
+                                                <div class="text-xs text-gray-400">2 hours ago</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-4 border-l-2 border-gray-200 h-4"></div>
+                                        
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs font-bold">3</div>
+                                            <div class="ml-4 flex-1">
+                                                <div class="text-sm font-semibold">Viewed Room Type</div>
+                                                <div class="text-xs text-gray-500">Studio Plus - viewed pricing</div>
+                                                <div class="text-xs text-gray-400">1 hour ago</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-4 border-l-2 border-gray-200 h-4"></div>
+                                        
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white text-xs font-bold">4</div>
+                                            <div class="ml-4 flex-1">
+                                                <div class="text-sm font-semibold">Tentative Booking</div>
+                                                <div class="text-xs text-gray-500">Reserved Studio Plus - payment pending</div>
+                                                <div class="text-xs text-gray-400">30 min ago</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="ml-4 border-l-2 border-yellow-400 h-4"></div>
+                                        
+                                        <div class="flex items-center">
+                                            <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xs font-bold">5</div>
+                                            <div class="ml-4 flex-1">
+                                                <div class="text-sm font-semibold text-yellow-700">Awaiting Confirmation</div>
+                                                <div class="text-xs text-gray-500">TTL: 23:30 remaining</div>
+                                                <div class="text-xs text-gray-400">Now</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-6 p-3 bg-gray-100 rounded">
+                                        <div class="text-xs text-gray-500 mb-1">SINGLE SOURCE OF TRUTH</div>
+                                        <div class="text-sm text-gray-700">Full journey tracked from campaign click to contract</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-Time Customer Journey Tracking</h3>
+                            <p class="text-gray-600 mb-6">
+                                Track every customer interaction from campaign click to contract, with direct CRM integration and custom campaign URL support.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Complete customer journey visibility
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Direct CRM platform integration
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Custom campaign URLs and GA tracking
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time-Limited Offers -->
+                <div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Time-Limited Offers that Drive Action</h3>
+                        <p class="text-gray-600 mb-8 max-w-3xl mx-auto">
+                            Generate urgency with TTL (Time-to-Live) logic for tentative bookings. If a booking expires, Lavanda automatically releases it back to inventory while maintaining conversion momentum.
+                        </p>
+                        
+                        <!-- TTL Mockup -->
+                        <div class="max-w-2xl mx-auto">
+                            <div class="grid grid-cols-2 gap-6">
+                                <!-- Active Booking -->
+                                <div class="bg-white border border-gray-200 rounded-lg shadow-lg p-6">
+                                    <div class="text-sm font-semibold text-gray-900 mb-2">Studio Plus - Manchester</div>
+                                    <div class="text-2xl font-bold text-orange-600 mb-2">04:32</div>
+                                    <div class="text-xs text-gray-600 mb-4">remaining to complete booking</div>
+                                    <div class="bg-orange-100 p-3 rounded">
+                                        <div class="text-xs text-orange-800 font-semibold">⏰ Limited Time Offer</div>
+                                        <div class="text-xs text-gray-600 mt-1">Complete your booking now to secure this room</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Expired State -->
+                                <div class="bg-gray-50 border border-gray-200 rounded-lg shadow-lg p-6">
+                                    <div class="text-sm font-semibold text-gray-600 mb-2">Studio Plus - Manchester</div>
+                                    <div class="text-2xl font-bold text-gray-500 mb-2">EXPIRED</div>
+                                    <div class="text-xs text-gray-500 mb-4">booking window closed</div>
+                                    <div class="bg-green-100 p-3 rounded">
+                                        <div class="text-xs text-green-800 font-semibold">✅ Room Available Again</div>
+                                        <div class="text-xs text-gray-600 mt-1">This room is now available for new bookings</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12">Results & Proof</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Metric 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            30%
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Increase in Lead-to-Lease</div>
+                        <div class="text-xs text-gray-600">Using optimised branded journeys</div>
+                    </div>
+                    
+                    <!-- Metric 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            50%+
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Campaign Click-Through Tracking</div>
+                        <div class="text-xs text-gray-600">Via CRM-integrated journey data</div>
+                    </div>
+                    
+                    <!-- Metric 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            High
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Rebooking Rates</div>
+                        <div class="text-xs text-gray-600">Driven by AI-suggested campaigns</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-lg text-gray-700 mb-6 italic">
+                        "Lavanda let us go from zero to a fully embedded booking journey in days. We now track every lead from first click to lease, and our rebooker campaigns basically run themselves."
+                    </div>
+                    <div class="text-sm font-semibold text-gray-900">Director of Marketing</div>
+                    <div class="text-sm text-gray-600">Leading PBSA Operator</div>
+                    <div class="mt-4">
+                        <button class="text-gray-600 text-sm font-semibold hover:text-gray-800 transition">
+                            Read Case Study →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto text-white">
+                <h2 class="text-3xl font-bold mb-6">
+                    Want a booking journey that works as hard as your brand does?
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Join marketing teams at leading property companies who trust Lavanda to deliver high-converting, branded booking experiences.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all">
+                        Talk to a Marketing Expert
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all">
+                        See Lavanda Journeys in Action
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="lavanda-logo mb-4">
+                            <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Modern property management software built for the teams that run it.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Solutions</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="it-teams.html" class="hover:text-white transition">IT Teams</a></li>
+                            <li><a href="finance.html" class="hover:text-white transition">Finance</a></li>
+                            <li><a href="marketing.html" class="hover:text-white transition">Marketing</a></li>
+                            <li><a href="#" class="hover:text-white transition">Operations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Resources</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">API Documentation</a></li>
+                            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-white transition">Integration Guides</a></li>
+                            <li><a href="#" class="hover:text-white transition">Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">About</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                            <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                            &copy; 2025 Lavanda. All rights reserved.
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            getlavanda.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

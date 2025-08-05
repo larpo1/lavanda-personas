@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Teams - Lavanda PMS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+    <style>
+        /* Tailwind CDN */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        /* Grayscale Palette */
+        .gray-dark {
+            background: #374151;
+        }
+        
+        .gray-medium {
+            background: #6B7280;
+        }
+        
+        .diagonal-divider {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        
+        .diagonal-divider-reverse {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* Lavanda Logo Font */
+        .lavanda-logo {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        /* Code Syntax Highlighting */
+        .syntax-keyword { color: #8B5CF6; }
+        .syntax-string { color: #10B981; }
+        .syntax-comment { color: #6B7280; }
+        .syntax-function { color: #3B82F6; }
+        
+        /* Custom Animations */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse-slow 2s infinite;
+        }
+        
+        /* Mock UI Elements */
+        .mock-terminal {
+            background: #1F2937;
+            color: #10B981;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .mock-browser {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+        }
+        
+        .browser-bar {
+            background: #E5E7EB;
+            height: 30px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .dot-red { background: #EF4444; }
+        .dot-yellow { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 py-4 border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="lavanda-logo">
+                <a href="index.html" class="hover:opacity-80 transition">
+                    <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-600 transition">← Back to Overview</a>
+                <a href="#" class="hover:text-gray-600 transition">Book Demo</a>
+                <a href="#" class="hover:text-gray-600 transition">See Lavanda in Action</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-gray-600 mb-4 uppercase tracking-wide">For Finance Teams</div>
+                        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                            Eliminate Reconciliation<br>
+                            Headaches with<br>
+                            <span class="text-gray-700">AI-Powered Accounting</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Move beyond spreadsheets and manual processes. Lavanda automates your accounts receivable from booking to bank, with intelligent insights that save time and reduce risk.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                                Book a Demo
+                            </button>
+                            <button class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-gray-500 hover:text-gray-800 transition-all">
+                                See Lavanda in Action
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Mockup -->
+                    <div class="relative">
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-xl">
+                            <div class="bg-gray-600 text-white p-4 rounded-t-lg">
+                                <h4 class="font-semibold">Invoice Management Dashboard</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-gray-600 rounded-full mr-3"></div>
+                                            <span class="text-sm font-medium">Booking #2024-001</span>
+                                        </div>
+                                        <span class="text-sm text-gray-600">£1,200 - Paid</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-yellow-50 rounded">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+                                            <span class="text-sm font-medium">Booking #2024-002</span>
+                                        </div>
+                                        <span class="text-sm text-gray-600">£850 - Overdue</span>
+                                    </div>
+                                    <div class="flex justify-between items-center p-3 bg-red-50 rounded">
+                                        <div class="flex items-center">
+                                            <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                                            <span class="text-sm font-medium">Booking #2024-003</span>
+                                        </div>
+                                        <span class="text-sm text-gray-600">£950 - Failed</span>
+                                    </div>
+                                </div>
+                                <div class="mt-6 p-4 bg-gray-100 rounded">
+                                    <div class="text-xs text-gray-500 mb-2">AI SUMMARY</div>
+                                    <div class="text-sm text-gray-700">
+                                        <strong>Booking Story:</strong> Booking placed → Instalment paid → Extension → Credit note issued → Paid in full
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-center">
+                                    <span class="text-xs text-gray-600 font-semibold">No more chasing payments or reconciling by hand</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="py-16 bg-gray-700 diagonal-divider">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-12">Challenges for Finance Teams</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">📊 Manual Invoicing & Reconciliation</h3>
+                        <p class="text-sm">Tedious, error-prone processes increase cost and risk.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔄 Booking Complexity</h3>
+                        <p class="text-sm">Extensions, cancellations, and service upsells make accurate accounting difficult.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔗 Fragmented Systems</h3>
+                        <p class="text-sm">Disconnected PMS and ERP tools require constant rechecking.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">⏰ Late Payments & Poor Visibility</h3>
+                        <p class="text-sm">Delays and lack of transparency impact cash flow.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">📋 Tax & Compliance Burdens</h3>
+                        <p class="text-sm">Managing multi-jurisdictional rules and VAT regimes manually is risky.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">How Lavanda Solves Them</h2>
+                
+                <!-- End-to-End AR Automation -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">End-to-End AR Automation</h3>
+                            <p class="text-gray-600 mb-6">
+                                From the moment a booking is created, Lavanda generates invoices, tracks payments, manages corrections, and automates reconciliation. Handle short stays, long stays, and everything in between.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Automated invoice generation from bookings
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Real-time payment tracking and reconciliation
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Handles complex billing scenarios automatically
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Invoice Lifecycle Mockup -->
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                            <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                <h4 class="font-semibold text-gray-900">Invoice Lifecycle Timeline</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-xs font-bold mr-4">1</div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-semibold">Booking Creation</div>
+                                            <div class="text-xs text-gray-500">Invoice drafted automatically</div>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Day 1</div>
+                                    </div>
+                                    <div class="ml-4 border-l-2 border-gray-200 h-4"></div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-xs font-bold mr-4">2</div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-semibold">Payment Collection</div>
+                                            <div class="text-xs text-gray-500">Stripe integration processes payment</div>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Day 3</div>
+                                    </div>
+                                    <div class="ml-4 border-l-2 border-gray-200 h-4"></div>
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white text-xs font-bold mr-4">3</div>
+                                        <div class="flex-1">
+                                            <div class="text-sm font-semibold">Auto Reconciliation</div>
+                                            <div class="text-xs text-gray-500">Matched and balanced</div>
+                                        </div>
+                                        <div class="text-xs text-gray-500">Day 4</div>
+                                    </div>
+                                </div>
+                                <div class="mt-6 p-3 bg-gray-100 rounded">
+                                    <div class="text-xs text-gray-500 mb-1">AI COPILOT</div>
+                                    <div class="text-sm text-gray-700">"This booking is now fully reconciled – no action needed."</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Payment Allocation -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Payment Matching Mockup -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                    <h4 class="font-semibold text-gray-900">Payment Matching Summary</h4>
+                                </div>
+                                <div class="p-6">
+                                    <div class="grid grid-cols-2 gap-6">
+                                        <div>
+                                            <div class="text-xs text-gray-500 mb-3">STRIPE PAYOUTS</div>
+                                            <div class="space-y-2">
+                                                <div class="p-3 bg-blue-50 rounded">
+                                                    <div class="text-sm font-semibold">£1,200.00</div>
+                                                    <div class="text-xs text-gray-500">Payment ID: pi_1234</div>
+                                                </div>
+                                                <div class="p-3 bg-blue-50 rounded">
+                                                    <div class="text-sm font-semibold">£850.00</div>
+                                                    <div class="text-xs text-gray-500">Payment ID: pi_5678</div>
+                                                </div>
+                                                <div class="p-3 bg-blue-50 rounded">
+                                                    <div class="text-sm font-semibold">-£125.00</div>
+                                                    <div class="text-xs text-gray-500">Refund: re_9012</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs text-gray-500 mb-3">MATCHED INVOICES</div>
+                                            <div class="space-y-2">
+                                                <div class="p-3 bg-green-50 rounded flex items-center">
+                                                    <div class="flex-1">
+                                                        <div class="text-sm font-semibold">INV-2024-001</div>
+                                                        <div class="text-xs text-gray-500">£1,200.00</div>
+                                                    </div>
+                                                    <div class="text-green-600 text-xs">✓</div>
+                                                </div>
+                                                <div class="p-3 bg-green-50 rounded flex items-center">
+                                                    <div class="flex-1">
+                                                        <div class="text-sm font-semibold">INV-2024-002</div>
+                                                        <div class="text-xs text-gray-500">£850.00</div>
+                                                    </div>
+                                                    <div class="text-green-600 text-xs">✓</div>
+                                                </div>
+                                                <div class="p-3 bg-green-50 rounded flex items-center">
+                                                    <div class="flex-1">
+                                                        <div class="text-sm font-semibold">CRN-2024-001</div>
+                                                        <div class="text-xs text-gray-500">-£125.00</div>
+                                                    </div>
+                                                    <div class="text-green-600 text-xs">✓</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 text-center">
+                                        <span class="text-xs text-gray-600 font-semibold">Automated match - 100% reconciliation confidence</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Payment Allocation</h3>
+                            <p class="text-gray-600 mb-6">
+                                Automatically allocate payments, refunds, and chargebacks to the correct invoices, even when bookings change. Syncs with Stripe and other providers for real-time clarity.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Real-time Stripe integration and matching
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Handles partial payments and refunds
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Automated chargeback allocation
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flexible Billing Engine -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Flexible Billing & Correction Engine</h3>
+                            <p class="text-gray-600 mb-6">
+                                Lavanda adapts to custom instalment plans, upfront deposits, recurring services, and ad hoc charges. It handles cancellations and room moves automatically through intelligent credit notes.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Custom instalment plans and deposits
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Automatic credit note generation
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Handles complex booking changes
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Correction Workflow Mockup -->
+                        <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                            <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                <h4 class="font-semibold text-gray-900">Booking Change Workflow</h4>
+                            </div>
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="p-4 bg-yellow-50 border border-yellow-200 rounded">
+                                        <div class="text-sm font-semibold text-yellow-800 mb-2">🔄 Room Move Detected</div>
+                                        <div class="text-xs text-gray-600">Student moved from Studio A to Studio B</div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-center">
+                                        <div class="text-gray-400">↓</div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="p-3 bg-red-50 rounded">
+                                            <div class="text-xs text-red-600 font-semibold mb-1">CREDIT NOTE</div>
+                                            <div class="text-sm">CRN-2024-089</div>
+                                            <div class="text-xs text-gray-500">-£200 (Studio A refund)</div>
+                                        </div>
+                                        <div class="p-3 bg-green-50 rounded">
+                                            <div class="text-xs text-green-600 font-semibold mb-1">NEW INVOICE</div>
+                                            <div class="text-sm">INV-2024-145</div>
+                                            <div class="text-xs text-gray-500">£250 (Studio B charge)</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-3 bg-gray-100 rounded">
+                                        <div class="text-xs text-gray-500 mb-1">AI EXPLANATION</div>
+                                        <div class="text-sm text-gray-700">"Room move triggered invoice correction – all adjustments complete."</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ERP Integration -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- ERP Integration Mockup -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-gray-50 p-8 rounded-lg">
+                                <div class="text-center mb-6">
+                                    <div class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold">
+                                        LAVANDA PMS
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-8">
+                                    <!-- API Flow -->
+                                    <div class="text-center">
+                                        <div class="text-sm text-gray-600 mb-2">Real-time API</div>
+                                        <div class="h-16 flex items-center justify-center">
+                                            <div class="w-full border-t-2 border-gray-500 border-dashed"></div>
+                                        </div>
+                                        <div class="bg-gray-200 p-3 rounded text-sm">
+                                            <div class="font-semibold">Oracle Fusion</div>
+                                            <div class="text-xs text-gray-600">GraphQL + Webhooks</div>
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-2">Used for Oracle</div>
+                                    </div>
+                                    
+                                    <!-- File Flow -->
+                                    <div class="text-center">
+                                        <div class="text-sm text-gray-600 mb-2">Flat File Export</div>
+                                        <div class="h-16 flex items-center justify-center">
+                                            <div class="w-full border-t-2 border-gray-400 border-dashed"></div>
+                                        </div>
+                                        <div class="bg-gray-300 p-3 rounded text-sm">
+                                            <div class="font-semibold">Yardi</div>
+                                            <div class="text-xs text-gray-600">SFTP Export</div>
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-2">Used for Yardi</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 text-center">
+                                    <div class="text-xs text-gray-500 mb-2">Also supports:</div>
+                                    <div class="flex justify-center space-x-4 text-xs text-gray-600">
+                                        <span>Sage</span>
+                                        <span>Xero</span>
+                                        <span>NetSuite</span>
+                                        <span>MS Dynamics</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-6 p-3 bg-blue-50 rounded text-center">
+                                    <div class="text-xs text-blue-800 font-semibold">
+                                        Avalara integration for EU-wide e-invoicing compliance
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Seamless ERP & Tax Compliance</h3>
+                            <p class="text-gray-600 mb-6">
+                                Export balanced journals or feed invoice-level data into your ERP. Use built-in tax tools to meet local requirements (e.g., Spanish SII reporting) or integrate e-invoicing compliance across Europe via Avalara.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Balanced journal exports for major ERPs
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Built-in tax compliance tools
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    EU e-invoicing via Avalara integration
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conversational Finance Copilot -->
+                <div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Conversational Finance Copilot</h3>
+                        <p class="text-gray-600 mb-8 max-w-3xl mx-auto">
+                            Ask your PMS questions like: "What's our outstanding debt for March?", "Which students cancelled after payment?", or "How much cash is forecast next month?"
+                        </p>
+                        
+                        <!-- Copilot Mockup -->
+                        <div class="max-w-2xl mx-auto">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                    <h4 class="font-semibold text-gray-900">AI Finance Assistant</h4>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <div class="flex justify-end">
+                                            <div class="bg-gray-200 px-4 py-2 rounded-l-lg rounded-tr-lg max-w-xs">
+                                                <div class="text-sm">Show cash forecast for Q3 across UK assets</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex justify-start">
+                                            <div class="bg-gray-600 text-white px-4 py-2 rounded-r-lg rounded-tl-lg max-w-md">
+                                                <div class="text-sm mb-3">Here's your Q3 UK cash forecast:</div>
+                                                <div class="bg-white/20 p-3 rounded text-xs">
+                                                    <div class="grid grid-cols-3 gap-2 text-center mb-2">
+                                                        <div>Jul: £245k</div>
+                                                        <div>Aug: £289k</div>
+                                                        <div>Sep: £198k</div>
+                                                    </div>
+                                                    <div class="border-t border-white/20 pt-2">
+                                                        <strong>Total: £732k</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex justify-end">
+                                            <div class="bg-gray-200 px-4 py-2 rounded-l-lg rounded-tr-lg max-w-xs">
+                                                <div class="text-sm">Which students cancelled after payment?</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex justify-start">
+                                            <div class="bg-gray-600 text-white px-4 py-2 rounded-r-lg rounded-tl-lg max-w-md">
+                                                <div class="text-sm">Found 3 cancellations requiring refund processing. Would you like me to generate the credit notes?</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-6 border-t pt-4">
+                                        <div class="flex items-center">
+                                            <input type="text" placeholder="Ask anything about your finances..." class="flex-1 p-3 border border-gray-300 rounded-l-lg text-sm">
+                                            <button class="bg-gray-600 text-white px-6 py-3 rounded-r-lg hover:bg-gray-700 transition">
+                                                Send
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12">Results & Proof</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Metric 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            80%
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Reduction in Manual Workload</div>
+                        <div class="text-xs text-gray-600">Thanks to full-cycle automation</div>
+                    </div>
+                    
+                    <!-- Metric 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            Zero
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Missed Invoices</div>
+                        <div class="text-xs text-gray-600">After switching from manual tracking</div>
+                    </div>
+                    
+                    <!-- Metric 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            Instant
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Financial Insights</div>
+                        <div class="text-xs text-gray-600">AI Copilot replacing complex spreadsheet reports</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-lg text-gray-700 mb-6 italic">
+                        "We haven't opened a spreadsheet in months. Lavanda's automated billing and reconciliation gave us our evenings back."
+                    </div>
+                    <div class="text-sm font-semibold text-gray-900">Finance Lead</div>
+                    <div class="text-sm text-gray-600">UK University Partner</div>
+                    <div class="mt-4">
+                        <button class="text-gray-600 text-sm font-semibold hover:text-gray-800 transition">
+                            Read Case Study →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto text-white">
+                <h2 class="text-3xl font-bold mb-6">
+                    Ready to simplify your finance operations?
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Join finance teams at leading property companies who trust Lavanda to automate their accounts receivable and eliminate reconciliation headaches.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all">
+                        Talk to a Finance Specialist
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all">
+                        See Lavanda in Action
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="lavanda-logo mb-4">
+                            <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Modern property management software built for the teams that run it.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Solutions</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="it-teams.html" class="hover:text-white transition">IT Teams</a></li>
+                            <li><a href="finance.html" class="hover:text-white transition">Finance</a></li>
+                            <li><a href="#" class="hover:text-white transition">Marketing</a></li>
+                            <li><a href="#" class="hover:text-white transition">Operations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Resources</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">API Documentation</a></li>
+                            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-white transition">Integration Guides</a></li>
+                            <li><a href="#" class="hover:text-white transition">Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">About</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                            <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                            &copy; 2025 Lavanda. All rights reserved.
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            getlavanda.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

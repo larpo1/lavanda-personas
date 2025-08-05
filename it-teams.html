@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Teams - Lavanda PMS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
+    <style>
+        /* Tailwind CDN */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        /* Grayscale Palette */
+        .gray-dark {
+            background: #374151;
+        }
+        
+        .gray-medium {
+            background: #6B7280;
+        }
+        
+        .diagonal-divider {
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        
+        .diagonal-divider-reverse {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        /* Lavanda Logo Font */
+        .lavanda-logo {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        
+        /* Code Syntax Highlighting */
+        .syntax-keyword { color: #8B5CF6; }
+        .syntax-string { color: #10B981; }
+        .syntax-comment { color: #6B7280; }
+        .syntax-function { color: #3B82F6; }
+        
+        /* Custom Animations */
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse-slow 2s infinite;
+        }
+        
+        /* Mock UI Elements */
+        .mock-terminal {
+            background: #1F2937;
+            color: #10B981;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .mock-browser {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+        }
+        
+        .browser-bar {
+            background: #E5E7EB;
+            height: 30px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        
+        .browser-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+        
+        .dot-red { background: #EF4444; }
+        .dot-yellow { background: #F59E0B; }
+        .dot-green { background: #10B981; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 py-4 border-b border-gray-200">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="lavanda-logo">
+                <a href="index.html" class="hover:opacity-80 transition">
+                    <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                </a>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-600 transition">← Back to Overview</a>
+                <a href="#" class="hover:text-gray-600 transition">Book Demo</a>
+                <a href="#" class="hover:text-gray-600 transition">API Docs</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="text-sm font-semibold text-teal-600 mb-4 uppercase tracking-wide">For IT Teams</div>
+                        <h1 class="text-5xl font-bold text-gray-900 mb-6">
+                            Modern Architecture.<br>
+                            Minimal Overhead.<br>
+                            <span class="text-gray-700">Zero Surprises.</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Lavanda is a PMS your tech team will love—secure, extensible, API-first, and built to reduce integration friction. Get the performance your users need without the dev headaches.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-gray-800 text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-700 hover:shadow-lg transition-all">
+                                Book a Demo
+                            </button>
+                            <button class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-gray-500 hover:text-gray-800 transition-all">
+                                Explore API Docs
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Hero Mockup -->
+                    <div class="relative">
+                        <div class="mock-browser shadow-xl">
+                            <div class="browser-bar">
+                                <div class="browser-dot dot-red"></div>
+                                <div class="browser-dot dot-yellow"></div>
+                                <div class="browser-dot dot-green"></div>
+                                <div class="text-xs text-gray-600 ml-4">GraphQL Explorer - Lavanda API</div>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid grid-cols-2 gap-4 text-sm">
+                                    <div>
+                                        <div class="text-xs text-gray-500 mb-2">QUERY</div>
+                                        <div class="mock-terminal p-4 rounded">
+                                            <div><span class="syntax-keyword">query</span> {</div>
+                                            <div class="ml-4"><span class="syntax-function">unitAvailability</span>(</div>
+                                            <div class="ml-8"><span class="syntax-string">buildingId</span>: <span class="syntax-string">123</span></div>
+                                            <div class="ml-4">) {</div>
+                                            <div class="ml-8"><span class="syntax-function">unitType</span></div>
+                                            <div class="ml-8"><span class="syntax-function">availableFrom</span></div>
+                                            <div class="ml-4">}</div>
+                                            <div>}</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-gray-500 mb-2">RESPONSE</div>
+                                        <div class="bg-green-50 p-4 rounded text-green-800">
+                                            <div>✓ Query executed successfully</div>
+                                            <div class="text-xs mt-2 text-green-600">23 units available</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-center">
+                                    <span class="text-xs text-gray-600 font-semibold">Real-time data. Zero scraping.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenges Section -->
+    <section class="py-16 bg-gray-700 diagonal-divider">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-12">Challenges for IT Teams</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔗 Siloed Systems</h3>
+                        <p class="text-sm">Integrations are fragile, expensive, and time-consuming.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🔒 Vendor Lock-in</h3>
+                        <p class="text-sm">Difficult to customise workflows or extend functionality.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">🛡️ Security & Compliance</h3>
+                        <p class="text-sm">GDPR, InfoSec, and audit needs are poorly supported.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">⏱️ Slow Time to Value</h3>
+                        <p class="text-sm">Legacy PMS systems take months to deploy and integrate.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                        <h3 class="font-bold mb-3">📊 Support & Observability</h3>
+                        <p class="text-sm">No visibility into what's working or why things break.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Solutions Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-16">How Lavanda Solves Them</h2>
+                
+                <!-- GraphQL Architecture -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Open, GraphQL-Driven API Architecture</h3>
+                            <p class="text-gray-600 mb-6">
+                                Lavanda's federated supergraph exposes all critical functionality—inventory, pricing, booking, lead management, payments, and more—via versioned, fully documented GraphQL APIs.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Query exactly what you need – no over-fetching
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Versioned, fully documented schema
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Live testing environment included
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- GraphQL Explorer Mockup -->
+                        <div class="mock-browser shadow-2xl">
+                            <div class="browser-bar">
+                                <div class="browser-dot dot-red"></div>
+                                <div class="browser-dot dot-yellow"></div>
+                                <div class="browser-dot dot-green"></div>
+                                <div class="text-xs text-gray-600 ml-4">api.lavanda.com/graphql</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="grid grid-cols-3 gap-2 text-xs">
+                                    <div>
+                                        <div class="bg-gray-100 p-2 rounded text-gray-700">
+                                            <div class="font-semibold mb-2">Schema</div>
+                                            <div class="space-y-1 text-xs">
+                                                <div>📋 Bookings</div>
+                                                <div>🏢 Units</div>
+                                                <div>💳 Payments</div>
+                                                <div>👥 Residents</div>
+                                                <div>📊 Analytics</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <div class="mock-terminal p-2 rounded">
+                                            <div class="text-green-400 text-xs mb-2">// Build exactly what you need</div>
+                                            <div><span class="syntax-keyword">query</span> <span class="syntax-function">GetAvailableUnits</span> {</div>
+                                            <div class="ml-2"><span class="syntax-function">building</span>(<span class="syntax-string">id</span>: <span class="syntax-string">"123"</span>) {</div>
+                                            <div class="ml-4"><span class="syntax-function">name</span></div>
+                                            <div class="ml-4"><span class="syntax-function">units</span> {</div>
+                                            <div class="ml-6"><span class="syntax-function">id</span></div>
+                                            <div class="ml-6"><span class="syntax-function">type</span></div>
+                                            <div class="ml-6"><span class="syntax-function">availability</span> {</div>
+                                            <div class="ml-8"><span class="syntax-function">from</span></div>
+                                            <div class="ml-8"><span class="syntax-function">to</span></div>
+                                            <div class="ml-6">}</div>
+                                            <div class="ml-4">}</div>
+                                            <div class="ml-2">}</div>
+                                            <div>}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Webhooks -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Webhook Config Mockup -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg">
+                                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                                    <h4 class="font-semibold text-gray-900">Webhook Configuration</h4>
+                                </div>
+                                <div class="p-6">
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="text-sm font-medium text-gray-700">Endpoint URL</label>
+                                            <div class="mt-1 bg-gray-50 p-2 rounded text-sm text-gray-600">
+                                                https://your-app.com/webhooks/lavanda
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label class="text-sm font-medium text-gray-700">Events</label>
+                                            <div class="mt-2 space-y-2">
+                                                <div class="flex items-center">
+                                                    <div class="w-4 h-4 bg-gray-600 rounded mr-2"></div>
+                                                    <span class="text-sm">booking.created</span>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <div class="w-4 h-4 bg-gray-600 rounded mr-2"></div>
+                                                    <span class="text-sm">payment.failed</span>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <div class="w-4 h-4 bg-gray-600 rounded mr-2"></div>
+                                                    <span class="text-sm">user.session_started</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button class="bg-gray-700 text-white px-4 py-2 rounded text-sm hover:bg-gray-600 transition">
+                                                Test Webhook
+                                            </button>
+                                            <button class="border border-gray-300 text-gray-600 px-4 py-2 rounded text-sm hover:border-gray-500 transition">
+                                                Save Config
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center text-sm text-gray-600 font-semibold mt-4">
+                                Stay in sync without polling
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Real-Time Integration with Webhooks</h3>
+                            <p class="text-gray-600 mb-6">
+                                Subscribe to booking lifecycle events, payment updates, or user actions via a scalable webhook system with predictable payloads and built-in retry logic.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Reliable delivery with retry logic
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Predictable JSON payloads
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3"></div>
+                                    Built-in testing tools
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ERP Integration -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Flexible ERP Integration Options</h3>
+                            <p class="text-gray-600 mb-6">
+                                Choose your preferred integration strategy based on your ERP system and technical requirements.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3 mt-2"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">GraphQL API + Webhooks</div>
+                                        <div class="text-sm text-gray-600">Real-time, event-driven sync (e.g. Oracle Fusion)</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-2 h-2 bg-gray-500 rounded-full mr-3 mt-2"></div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Flat-file Export</div>
+                                        <div class="text-sm text-gray-600">Zero-touch daily ingest (e.g. Yardi)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ERP Sync Diagram -->
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="text-center">
+                                <div class="inline-block bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold mb-6">
+                                    LAVANDA PMS
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-8">
+                                <!-- API Flow -->
+                                <div class="text-center">
+                                    <div class="text-sm text-gray-600 mb-2">Real-time API</div>
+                                    <div class="h-16 flex items-center justify-center">
+                                        <div class="w-full border-t-2 border-gray-500 border-dashed"></div>
+                                    </div>
+                                    <div class="bg-gray-200 p-3 rounded text-sm">
+                                        <div class="font-semibold">Oracle Fusion</div>
+                                        <div class="text-xs text-gray-600">GraphQL + Webhooks</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- File Flow -->
+                                <div class="text-center">
+                                    <div class="text-sm text-gray-600 mb-2">Flat File Export</div>
+                                    <div class="h-16 flex items-center justify-center">
+                                        <div class="w-full border-t-2 border-gray-400 border-dashed"></div>
+                                    </div>
+                                    <div class="bg-gray-300 p-3 rounded text-sm">
+                                        <div class="font-semibold">Yardi</div>
+                                        <div class="text-xs text-gray-600">SFTP Export</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 text-center">
+                                <div class="text-xs text-gray-500 mb-2">Also supports:</div>
+                                <div class="flex justify-center space-x-4 text-xs text-gray-600">
+                                    <span>Sage</span>
+                                    <span>Xero</span>
+                                    <span>NetSuite</span>
+                                    <span>MS Dynamics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance -->
+                <div class="mb-20">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <!-- Compliance Dashboard -->
+                        <div class="order-2 lg:order-1">
+                            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
+                                <div class="bg-gray-600 text-white p-4">
+                                    <h4 class="font-semibold">Security & Compliance Overview</h4>
+                                </div>
+                                <div class="p-6">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-xs">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium">GDPR Compliant</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-xs">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium">ISO27001 Ready</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-xs">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium">SAML SSO Enabled</span>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div class="w-6 h-6 bg-gray-600 rounded-full flex items-center justify-center mr-3">
+                                                <span class="text-white text-xs">✓</span>
+                                            </div>
+                                            <span class="text-sm font-medium">Regional Data Hosting</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-100 px-6 py-3 border-t border-gray-200">
+                                    <div class="text-sm text-gray-700 font-semibold">
+                                        🏆 The PMS trusted by FTSE 100 companies
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="order-1 lg:order-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Infosec & Data Compliance by Design</h3>
+                            <p class="text-gray-600 mb-6">
+                                Built with GDPR principles and enterprise-grade controls from day one.
+                            </p>
+                            <ul class="space-y-3 text-gray-600">
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Data residency options across EU regions
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Full audit logs with immutable history
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Role-based access controls (RBAC)
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-2 h-2 bg-gray-600 rounded-full mr-3"></div>
+                                    Secure authentication (SAML-ready)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time to Value -->
+                <div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Fast, Predictable Time-to-Value</h3>
+                        <p class="text-gray-600 mb-8 max-w-3xl mx-auto">
+                            Deploy a new building in &lt;2 weeks using proven onboarding workflows, staging environments, and clear API guides. Integrate with your ecosystem once—and scale across your portfolio without bottlenecks.
+                        </p>
+                        
+                        <!-- Timeline -->
+                        <div class="max-w-4xl mx-auto">
+                            <div class="flex justify-between items-center">
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                                        1
+                                    </div>
+                                    <div class="text-sm font-semibold">API Access</div>
+                                    <div class="text-xs text-gray-600">Day 1</div>
+                                </div>
+                                <div class="flex-1 h-0.5 bg-gray-400 mx-4"></div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                                        2
+                                    </div>
+                                    <div class="text-sm font-semibold">Integration</div>
+                                    <div class="text-xs text-gray-600">Week 1</div>
+                                </div>
+                                <div class="flex-1 h-0.5 bg-gray-400 mx-4"></div>
+                                <div class="text-center">
+                                    <div class="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white font-bold mb-2">
+                                        3
+                                    </div>
+                                    <div class="text-sm font-semibold">Go Live</div>
+                                    <div class="text-xs text-gray-600">&lt;2 Weeks</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Results Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-12">Results & Proof</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- Metric 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            &lt;2 weeks
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Time to Value</div>
+                        <div class="text-xs text-gray-600">Enterprise rollouts via Lavanda API + config workflows</div>
+                    </div>
+                    
+                    <!-- Metric 2 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            Zero
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Downtime Events</div>
+                        <div class="text-xs text-gray-600">Thanks to reliable webhook architecture</div>
+                    </div>
+                    
+                    <!-- Metric 3 -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">
+                            99.9%
+                        </div>
+                        <div class="text-sm font-semibold text-gray-700 mb-2">Developer Satisfaction</div>
+                        <div class="text-xs text-gray-600">Fully documented GraphQL schema + live testing</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-lg text-gray-700 mb-6 italic">
+                        "Lavanda was the easiest integration we've done. The GraphQL schema is clean, the webhook payloads are rock solid, and we've had zero security headaches."
+                    </div>
+                    <div class="text-sm font-semibold text-gray-900">Senior Engineer</div>
+                    <div class="text-sm text-gray-600">European PBSA Operator</div>
+                    <div class="mt-4">
+                        <button class="text-gray-600 text-sm font-semibold hover:text-gray-800 transition">
+                            Read Integration Case Study →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto text-white">
+                <h2 class="text-3xl font-bold mb-6">
+                    Need a PMS that actually plays nice with your stack?
+                </h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Join IT teams at FTSE 100 companies who trust Lavanda for mission-critical property management operations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 hover:shadow-lg transition-all">
+                        Talk to Our Tech Team
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all">
+                        Explore the API Docs
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <div class="lavanda-logo mb-4">
+                            <img src="https://www.getlavanda.com/wp-content/uploads/2022/10/LAV-logo-landscape.svg" alt="Lavanda" class="h-8">
+                        </div>
+                        <p class="text-gray-400 text-sm">
+                            Modern property management software built for the teams that run it.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Solutions</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="it-teams.html" class="hover:text-white transition">IT Teams</a></li>
+                            <li><a href="#" class="hover:text-white transition">Finance</a></li>
+                            <li><a href="#" class="hover:text-white transition">Marketing</a></li>
+                            <li><a href="#" class="hover:text-white transition">Operations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Resources</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">API Documentation</a></li>
+                            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+                            <li><a href="#" class="hover:text-white transition">Integration Guides</a></li>
+                            <li><a href="#" class="hover:text-white transition">Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-white transition">About</a></li>
+                            <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                            <li><a href="#" class="hover:text-white transition">Privacy</a></li>
+                            <li><a href="#" class="hover:text-white transition">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                            &copy; 2025 Lavanda. All rights reserved.
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            getlavanda.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

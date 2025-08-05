@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Teams - Lavanda PMS</title>
+    
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"></script>
     <style>
         /* Tailwind CDN */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css');
+        
+        /* Outfit Font Implementation */
+        * {
+            font-family: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        /* Typography Hierarchy - Following Lavanda Brand Guidelines */
+        h1, .text-4xl, .text-5xl, .text-6xl {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600; /* Semi-Bold for headlines */
+        }
+        
+        h2, h3, .text-2xl, .text-3xl {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300; /* Light for sub-headlines */
+        }
+        
+        h4, h5, h6, .text-xl, .text-lg {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400; /* Regular for smaller headings */
+        }
+        
+        body, p, .text-base, .text-sm, .text-xs {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300; /* Light for body copy */
+        }
+        
+        .font-medium {
+            font-weight: 500;
+        }
+        
+        .font-semibold {
+            font-weight: 600;
+        }
+        
+        .font-bold {
+            font-weight: 700;
+        }
         
         /* Grayscale Palette */
         .gray-dark {
